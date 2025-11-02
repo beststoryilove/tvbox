@@ -1,18 +1,22 @@
 import json5, base64, requests
 import hashlib, os
 
-output_file = "fty/jar/fty.jar"
+output_jar = "fty/jar/fty.jar"
+output_config = "fty/config.json"
 # 确保输出目录存在
-output_dir = os.path.dirname(output_file)
+output_dir = os.path.dirname(output_jar)
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
     
 resp = requests.get('http://www.饭太硬.net/tv', headers={'user-agent': 'okhttp/3.12.5'})
 b64  = resp.text.split('**')[-1].strip()
-cfg  = json5.loads(base64.b64decode(b64).decode('utf-8'))
+config = base64.b64decode(b64).decode('utf-8')
+cfg  = json5.loads(config)
 
-
-
+#写config
+with open(output_config, 'wb') as f:
+    f.write(config)
+print(f'Saved  {len(config)} bytes')
 
 header = {'user-agent': 'okhttp/3.12.5'}
 
@@ -23,11 +27,10 @@ spider = cfg['spider']
 url, _, expect_md5 = spider.partition(';md5;')
 
 # 2. 下载
-#save = '/home/runner/work/tqx5201.github.io/tqx5201.github.io/tvbox/jar/fty.jar'
 print('Downloading →', url)
 r = requests.get(url, headers=header, timeout=30)
 r.raise_for_status()
-with open(output_file, 'wb') as f:
+with open(output_jar, 'wb') as f:
     f.write(r.content)
 print(f'Saved  {len(r.content)} bytes')
 
