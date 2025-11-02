@@ -14,8 +14,8 @@ config = base64.b64decode(b64).decode('utf-8')
 cfg  = json5.loads(config)
 
 #写config
-with open(output_config, 'wb') as f:
-    f.write(config)
+with open(output_config, 'w', encoding='utf-8') as f:
+    f.write(config)  # config 是 str
 print(f'Saved  {len(config)} bytes')
 
 header = {'user-agent': 'okhttp/3.12.5'}
