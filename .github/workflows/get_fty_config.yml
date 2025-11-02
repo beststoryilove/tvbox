@@ -24,7 +24,7 @@ jobs:
           pip install json5 requests
       
       - name: Run Python script 
-        run: python jiaoben/get_fty_jar.py
+        run: python jiaoben/get_fty_config.py
 
 
       - name: 提交更新
@@ -32,5 +32,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Update FTY JAR"
+          git commit -m "Update FTY CONFIG"
           git push
