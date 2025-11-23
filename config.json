@@ -38,7 +38,7 @@
 
 
     "lives": [
-        {"name":"生态2","type":0,"url":"https://7259.cloudns.ch/iptv/source/list_yd.txt","playerType":2},
+        {"name":"生态2","type":0,"url":"https://7259.cloudns.ch/iptv/source/list_yd.txt","playerType":2,"epg":"https://tv.mxdyeah.top/epgphp/?ch={name}&date={date}","logo":"https://epg.v1.mk/logo/{name}.png"},
         {"name":"牛播一","type":0,"url":"http://127.0.0.1:9978/proxy?do=饭太硬&type=liveList","playerType":2,"epg":"http://epg.51zmt.top:8000/api/diyp/?ch={name}&date={date}","logo":"https://epg.v1.mk/logo/{name}.png"},
         
         {"name":"虎牙一起看","type":0,"url":"https://sub.ottiptv.cc/huyayqk.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.4.0.0"},
