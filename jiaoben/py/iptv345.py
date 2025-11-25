@@ -43,7 +43,7 @@ class Spider(Spider):
         channel_list = ["#EXTM3U"]
         try:
             base_url = "https://iptv345.com/"
-            fenlei = ["央视,ys", "卫视,ws", "综合,itv", "体育,ty", "电影,movie", "其他,other"]
+            fenlei = ["央视,ys", "卫视,ws", "综合,itv", "体育,ty", "电影,movie", "港台,gt", "其他,other"]
             
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
